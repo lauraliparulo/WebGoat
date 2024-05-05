@@ -136,7 +136,7 @@ public class CIAQuizTest extends LessonTest {
             .andReturn();
 
     String responseString = result.getResponse().getContentAsString();
-    assertThat(responseString).isEqualTo("[ true, true, true, true ]");
+    assertThat(responseString).isEqualTo("[true,true,true,true]");
   }
 
   @Test
@@ -160,7 +160,7 @@ public class CIAQuizTest extends LessonTest {
             .andReturn();
 
     String responseString = result.getResponse().getContentAsString();
-    assertThat(responseString).isEqualTo("[ false, true, true, true ]");
+    assertThat(responseString).isEqualTo("[false,true,true,true]");
   }
 
   @Test
@@ -184,7 +184,7 @@ public class CIAQuizTest extends LessonTest {
             .andReturn();
 
     String responseString = result.getResponse().getContentAsString();
-    assertThat(responseString).isEqualTo("[ true, false, true, true ]");
+    assertThat(responseString).isEqualTo("[true,false,true,true]");
   }
 
   @Test
@@ -208,6 +208,6 @@ public class CIAQuizTest extends LessonTest {
             .andReturn();
 
     String responseString = result.getResponse().getContentAsString();
-    assertThat(responseString).isEqualTo("[ false, false, false, false ]");
+    assertThat(responseString).isEqualTo("[false,false,false,false]");
   }
 } // end class

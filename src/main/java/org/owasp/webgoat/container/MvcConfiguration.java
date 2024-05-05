@@ -33,10 +33,10 @@ package org.owasp.webgoat.container;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import org.owasp.webgoat.container.i18n.Language;
 import org.owasp.webgoat.container.i18n.Messages;
 import org.owasp.webgoat.container.i18n.PluginMessages;
@@ -65,6 +65,9 @@ import org.thymeleaf.templateresolver.FileTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresource.ITemplateResource;
 import org.thymeleaf.templateresource.StringTemplateResource;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /** Configuration for Spring MVC */
 @Configuration
@@ -248,6 +251,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
   @Bean
   public Messages messageSource(Language language) {
     Messages messages = new Messages(language);
+    Locale.setDefault(Locale.ENGLISH);
     messages.setDefaultEncoding("UTF-8");
     messages.setBasename("classpath:i18n/messages");
     messages.setFallbackToSystemLocale(false);

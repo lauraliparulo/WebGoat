@@ -36,6 +36,7 @@ import org.owasp.webgoat.lessons.challenges.challenge1.Assignment1;
 import org.owasp.webgoat.lessons.challenges.challenge1.ImageServlet;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @ExtendWith(MockitoExtension.class)
 class Assignment1Test extends AssignmentEndpointTest {
